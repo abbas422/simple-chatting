@@ -6,7 +6,7 @@ var io = require('socket.io')(http);
 // app.get('/hello', function(req, res){
 //   res.sendFile(__dirname + '/index.html');
 // });
-app.get('/', function(req, res){
+app.post('/', function(req, res){
   res.send('hello world');
 });
 
