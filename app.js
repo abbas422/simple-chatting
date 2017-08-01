@@ -6,10 +6,9 @@ var io = require('socket.io')(http);
 // app.get('/hello', function(req, res){
 //   res.sendFile(__dirname + '/index.html');
 // });
-app.post('/', function(req, res){
-  res.send('hello world');
+app.get('/', function(req, res) {
+    res.status(200).send('MAIN PAGE')
 });
-
 
 
 // io.on('connection', function(socket){
@@ -20,6 +19,9 @@ app.post('/', function(req, res){
 //     io.emit('chat message', msg);
 //   });
 //});
-http.listen(process.env.PORT || 3100, function(){
-  console.log('listening on *:3000');
+// http.listen(process.env.PORT || 3100, function(){
+//   console.log('listening on *:3000');
+// });
+let listener = http.listen(process.env.PORT || 3100, function() {
+    console.log(`listeing on port ${listener.address().port}`)
 });
